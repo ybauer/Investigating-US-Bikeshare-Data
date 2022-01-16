@@ -26,6 +26,12 @@ Users can receive the following statistics using this code:
   - counts of each gender (only available for NYC and Chicago)
   - earliest, most recent, most common year of birth (only available for NYC and Chicago)
 
+## Potential Next Steps
+
+With the User info given it might be valuable of creating a most common user profile. With
+this information the Rideshare company will be able to target its users even better and
+also advertise the service among non-regular-users more. 
+
 
 ## What's in the repository?
 
