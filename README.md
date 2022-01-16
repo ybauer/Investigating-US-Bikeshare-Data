@@ -34,5 +34,7 @@ Users can receive the following statistics using this code:
 - [new_york_city.csv](.new_york_city.csv): New York City Rideshare data file
 - [washington.csv](.washington.csv): Washington Rideshare data file
 
-### Acknowledgements
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+### Credits
+The datasets used for this project are freely provided by [Udacity] (https://udacity.com/)
+Inspiration for this README file came from my partner [Orlando Castillo] (https://github.com/ojcastillo/sparkify/blob/master/README.md) who has greatly supported me on my journey of
+becoming a Data Analyst.
