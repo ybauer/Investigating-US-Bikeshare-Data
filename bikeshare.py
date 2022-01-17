@@ -6,6 +6,11 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
+#created a list for month and days as user input options
+
+MONTH_OPTIONS = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
+
+DAY_OPTIONS = ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 
 
 def get_filters():
@@ -31,31 +36,24 @@ def get_filters():
     print(f"\nThank you for entering. You have chosen {city.title()} as your city")
 
     # created a list of months
-    # used string to have user input the month of their interest
     # used while loop to exclude months that aren't present in the current dataset or to have user reevaluate their input
     # used lower() function to make inputs case caseinsensitive
 
-
-    month_input = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
     month = str(input("Please enter the month between January and June you are seeking data for: "))
 
-    while month.lower() not in month_input:
+    while month.lower() not in MONTH_OPTIONS:
         print("Invalid input. Please select a month between January and June.")
         month = str(input("Please enter the month between January and June or select all: "))
 
     print(f"\nThank you for entering, you have chosen {month.title()} as your month")
 
-
-    # created a list of days
     # used string to have user input the day of their interest
     # used while loop to have user reevaluate their input in case of typos
     # used lower() function to make inputs case caseinsensitive
 
-
-    day_input = ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
     day = str(input("Please enter the specific day of your choice or if you want to get all days enter all: "))
 
-    while day.lower() not in day_input:
+    while day.lower() not in DAY_OPTIONS:
         print("Please check your input again. This format may not been accepted")
         day = str(input("Please enter the specific day of your choice or if you want to get all days enter all: "))
 
@@ -94,7 +92,7 @@ def load_data(city, month, day):
     if month != 'all':
         # use the index of the month names list to get the corresponding int
         # since python lists are 0 indexed we need to add always +1 to get the actual month number
-        month_number = MONTH_NAMES.index(month) + 1
+        month_number = MONTH_OPTIONS.index(month) + 1
 
         # filter by month to create the new dataframe
         df = df[df['month'] == month_number]
