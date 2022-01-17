@@ -30,8 +30,6 @@ def get_filters():
 
     print(f"\nThank you for entering. You have chosen {city.title()} as your city")
 
-
-
     # created a list of months
     # used string to have user input the month of their interest
     # used while loop to exclude months that aren't present in the current dataset or to have user reevaluate their input
@@ -162,14 +160,13 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-    "Displays statistics on the total and average trip duration."
+    """Displays statistics on the total and average trip duration."""
 
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
     # used sum function to get the total travel time
     total_travel_time = df['Trip Duration'].sum()
-    # used divmod to change time format to minutes and seconds
     # to get days, hour, minutes and seconds from total_travel_time, I used the timedelta function
     total_travel_time = df['Trip Duration'].sum()
     import datetime
@@ -224,6 +221,7 @@ def user_stats(df):
 
 # created new dataframe for showing data to the user
 def print_raw_data(df):
+    """ Asks user to display 5 data rows at a time."""
     # the shape method returns two numbers, so I picked the first one which reflects always the rows of a dataframe.
     number_of_rows = df.shape[0]
 
