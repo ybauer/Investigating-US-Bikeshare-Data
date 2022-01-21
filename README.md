@@ -1,10 +1,13 @@
 # 1/11/22
 # Data Analysis of US Bikeshare Data
 
-> *This project was completed to satisfy the requirements of the [Programming for Data Science with Python Nanodegree] (https://www.udacity.com/course/programming-for-data-science-nanodegree--nd104_variant_b) and is meant to be educational in nature.*
+> *This project was completed to satisfy the requirements of the
+[Programming for Data Science with Python Nanodegree](https://www.udacity.com/course/programming-for-data-science-nanodegree--nd104_variant_b)
+and is meant to be educational in nature.*
 
 The code developed helps to investigate US Bikeshare Data in an efficient manner. At a high level,
-users can review statistics and key analytics about rideshare users in Washington, New York City and Chicago. [Udacity] (https://www.udacity.com/) is providing all three data files which contain randomly selected data for the first six months of 2017.
+users can review statistics and key analytics about rideshare users in Washington, New York City and Chicago.
+[Udacity](https://www.udacity.com/) is providing all three data files which contain randomly selected data for the first six months of 2017.
 
 ## Calculated Statistics
 
@@ -30,7 +33,7 @@ Users can receive the following statistics using this code:
 
 With the User info given it might be valuable of creating a most common user profile. With
 this information the Rideshare company will be able to target its users even better and
-also advertise the service among non-regular-users more. 
+also advertise the service among non-regular-users more.
 
 
 ## What's in the repository?
@@ -41,6 +44,8 @@ also advertise the service among non-regular-users more.
 - [washington.csv](.washington.csv): Washington Rideshare data file
 
 ### Credits
-The datasets used for this project are freely provided by [Udacity] (https://udacity.com/)
-Inspiration for this README file came from my partner [Orlando Castillo] (https://github.com/ojcastillo/sparkify/blob/master/README.md) who has greatly supported me on my journey of
+The datasets used for this project are freely provided by
+[Udacity](https://udacity.com/)
+Inspiration for this README file came from my partner
+[Orlando Castillo](https://github.com/ojcastillo/sparkify/blob/master/README.md) who has greatly supported me on my journey of
 becoming a Data Analyst.
