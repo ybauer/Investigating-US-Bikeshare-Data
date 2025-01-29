@@ -1,6 +1,5 @@
 import time
 import pandas as pd
-import numpy as np
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
@@ -26,7 +25,7 @@ def get_filters():
     # used string to have user input the city of their interest
     # used while loop to exclude cities that aren't present in the current dataset or to have user reevaluate their input
     # used lower() function to make inputs case caseinsensitive
-    city = str(input("Hey there! Please enter the city of your interest, please note that there is only data for Washington, New York City and Chicago available at this point. Please enter now: "))
+    city = input("Hey there! Please enter the city of your interest, please note that there is only data for Washington, New York City and Chicago available at this point. Please enter now: ")
     # city == "chicagO"
     # city.lower() == "chicago"
     while city.lower() not in CITY_DATA:
@@ -85,8 +84,12 @@ def load_data(city, month, day):
 
     # extracted month, day of week, and hour from Start Time as new columns
     df['month'] = df['start_time'].dt.month
-    df['weekday'] = df['start_time'].dt.weekday_name
+    df['weekday'] = df['start_time'].dt.day_name
     df['hour'] = df['start_time'].dt.hour
+
+    # Debug: Display unique months and weekdays in the data
+    print(f"Unique months in data: {df['month'].unique()}")
+    print(f"Unique weekdays in data: {df['weekday'].unique()}")
 
     # filter by month if applicable
     if month != 'all':
@@ -103,6 +106,7 @@ def load_data(city, month, day):
         # added .title() since the weekday is capitalized
         df = df[df['weekday'] == day.title()]
 
+    print(f"Data remaining after filtering: {df.shape[0]} rows.")
     return df
 
 
@@ -174,6 +178,11 @@ def trip_duration_stats(df):
 
     # used mean function to picture the average travel time
     average_travel_time = df['Trip Duration'].mean()
+    if pd.notna(average_travel_time):
+        average_travel_time_rev = datetime.timedelta(seconds=int(average_travel_time))
+    else:
+        average_travel_time_rev = datetime.timedelta(seconds=0)
+
     # to get days, hour, minutes and seconds from average_travel_time, I used the timedelta function
     average_travel_time_rev = datetime.timedelta(seconds = int(average_travel_time))
     print(f"Average travel time is: {average_travel_time_rev}")
